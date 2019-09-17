@@ -13,7 +13,7 @@
         <!--Minha Lista-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyGameRanking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MyListViewController" customModule="MyGameRanking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,6 +102,9 @@
                                 <state key="normal" title="Ordenar por  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2rT-KM-axq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-uO-fvI">
                                 <rect key="frame" x="20" y="143" width="87" height="28"/>
@@ -111,6 +114,9 @@
                                 <state key="normal" title="Genero  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGenders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuJ-Ma-JM3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHV-Pa-K2j">
                                 <rect key="frame" x="115" y="143" width="135" height="28"/>
@@ -120,6 +126,9 @@
                                 <state key="normal" title="Modo de Jogo  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGameModes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26K-RV-HpG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-Uc-2UB">
                                 <rect key="frame" x="258" y="143" width="100" height="28"/>
@@ -129,6 +138,9 @@
                                 <state key="normal" title="Duração  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGameTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJD-2j-TkQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
