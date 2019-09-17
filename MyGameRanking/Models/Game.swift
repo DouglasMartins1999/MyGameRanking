@@ -3,8 +3,8 @@ import Foundation
 class Game {
     var name:String;
     var year:Int;
-    var userRating:Double;
-    var criticRating:Double;
+    var userRating:Int;
+    var criticRating:Int;
     var platforms:[String];
     var beatingTime:Int;
     var mode:[String];
@@ -18,8 +18,8 @@ class Game {
     init(_ name: String, _ year: Int, _ uRating: Double?, _ cRating: Double, _ platform: [String]?, _ beatingTime: Int?, _ mode: [String]?, _ genres: [String], _ perspective: [String], _ aRating: Int, _ developer: String?, _ cover: String, _ banner: String){
         self.name = name;
         self.year = year;
-        self.userRating = uRating ?? 0;
-        self.criticRating = cRating;
+        self.userRating = Int(uRating ?? 0);
+        self.criticRating = Int(cRating);
         self.platforms = platform ?? [];
         self.beatingTime = beatingTime ?? 0;
         self.mode = mode ?? ["Single Player"];

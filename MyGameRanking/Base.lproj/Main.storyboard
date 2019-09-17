@@ -13,7 +13,7 @@
         <!--Minha Lista-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyGameRanking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MyListViewController" customModule="MyGameRanking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="166" id="nh3-EW-Nnh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyListCell" rowHeight="166" id="nh3-EW-Nnh" customClass="MyListTableViewCell" customModule="MyGameRanking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nh3-EW-Nnh" id="wsO-1U-uNh">
@@ -35,21 +35,21 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GTA V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-oa-PoX">
-                                                    <rect key="frame" x="146" y="11" width="86" height="36"/>
+                                                    <rect key="frame" x="146" y="11" width="188" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-4A-jvY">
-                                                    <rect key="frame" x="146" y="45" width="38" height="21"/>
+                                                    <rect key="frame" x="146" y="45" width="188" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shooter, Adventure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfx-fQ-1Oj">
-                                                    <rect key="frame" x="146" y="138" width="117" height="16"/>
+                                                    <rect key="frame" x="146" y="138" width="188" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -69,8 +69,9 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-g9-0YZ">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-g9-0YZ">
                                                     <rect key="frame" x="352" y="70" width="24" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7.8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-5R-LTX">
                                                             <rect key="frame" x="3" y="4" width="18" height="16"/>
@@ -81,14 +82,15 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.8099295661" green="0.8099295661" blue="0.8099295661" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="eC5-co-Dd5"/>
-                                                        <constraint firstAttribute="width" constant="24" id="efI-ff-JPE"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="genres" destination="lfx-fQ-1Oj" id="5jD-h9-u1Z"/>
+                                            <outlet property="name" destination="MY8-oa-PoX" id="X1I-sk-BfV"/>
+                                            <outlet property="platforms" destination="iav-je-iXW" id="wci-M2-Mg2"/>
+                                            <outlet property="rating" destination="c7x-5R-LTX" id="Yhz-1x-lBb"/>
+                                            <outlet property="year" destination="Zre-4A-jvY" id="eEh-f6-5ok"/>
                                             <segue destination="63X-4i-rfA" kind="show" id="BCG-yU-Tdx"/>
                                         </connections>
                                     </tableViewCell>
@@ -102,6 +104,9 @@
                                 <state key="normal" title="Ordenar por  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2rT-KM-axq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9x-uO-fvI">
                                 <rect key="frame" x="20" y="143" width="87" height="28"/>
@@ -111,6 +116,9 @@
                                 <state key="normal" title="Genero  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGenders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuJ-Ma-JM3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHV-Pa-K2j">
                                 <rect key="frame" x="115" y="143" width="135" height="28"/>
@@ -120,6 +128,9 @@
                                 <state key="normal" title="Modo de Jogo  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGameModes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26K-RV-HpG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-Uc-2UB">
                                 <rect key="frame" x="258" y="143" width="100" height="28"/>
@@ -129,6 +140,9 @@
                                 <state key="normal" title="Duração  " image="down-arrow(2)">
                                     <color key="titleColor" red="0.16834549492385786" green="0.16834549492385786" blue="0.16834549492385786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="showGameTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bJD-2j-TkQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,6 +155,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="NVu-5k-K9P" id="Qbe-Wn-CyQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
