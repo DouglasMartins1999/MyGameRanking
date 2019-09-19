@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var searchResult:[Game] = []
+    weak var listController:MyListViewController?
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -31,6 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as? MyListTableViewCell {
             let row = indexPath.row;
             cell.setGame(searchResult[row])
+            cell.addButton.tag = indexPath.row
             return cell;
         } else {
             return UITableViewCell();
@@ -56,8 +58,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         .getReleaseDate()
                         .getGame()
                 }
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             })
         }
+    }
+    
+    @IBAction func addGameToMyList(_ sender: UIButton) {
+        listController?.games.append(searchResult[sender.tag])
+        navigationController?.popViewController(animated: true)
     }
 }

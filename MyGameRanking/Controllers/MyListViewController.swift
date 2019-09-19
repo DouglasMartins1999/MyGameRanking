@@ -21,12 +21,13 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         chosenMode = genres[0];
         tableView.delegate = self;
         tableView.dataSource = self;
-        
-        var g = Game("Halo: Combat Evolved", 2001, 85, 87, ["PC", "Mac", "Xbox"], 39600, ["Single player", "Multiplayer", "Co-operative"], ["Shooter"], ["First person", "Third person"], 4, "Bungie", "", "")
-        games.append(g)
     }
     
-    //Create PickerView
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    // Create PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -155,6 +156,10 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.present(editRadiusAlert, animated: true)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? SearchViewController {
+            dest.listController = self
+        }
+    }
 
 }

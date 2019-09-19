@@ -235,14 +235,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCa-Y3-GQS">
-                                                    <rect key="frame" x="364" y="57" width="30" height="51"/>
+                                                    <rect key="frame" x="364" y="58" width="30" height="51"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addGameToMyList:" destination="6oL-go-E8R" eventType="touchUpInside" id="clW-H6-ycO"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addButton" destination="bCa-Y3-GQS" id="8Ar-hX-Tn6"/>
                                             <outlet property="genres" destination="b3U-6y-KEc" id="GdV-qG-uqh"/>
                                             <outlet property="name" destination="50Z-J7-mhf" id="goi-fF-PBo"/>
                                             <outlet property="platforms" destination="FDZ-Af-Z0N" id="JaV-jb-u9Y"/>

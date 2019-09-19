@@ -14,6 +14,7 @@ class MyListTableViewCell: UITableViewCell {
     @IBOutlet weak var platforms: UILabel!
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var addButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,6 @@ class MyListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
