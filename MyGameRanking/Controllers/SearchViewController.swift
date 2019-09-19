@@ -11,6 +11,7 @@ import UIKit
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var searchResult:[Game] = []
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,17 +19,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
-
-        searchResult.append(
-            Game("Halo: Combat Evolved", 2001, 85, 87, ["PC", "Mac", "Xbox"], 39600, ["Single player", "Multiplayer", "Co-operative"], ["Shooter"], ["First person", "Third person"], 4, "Bungie", "", "")
-        )
-        
-        GamesFetch.searchGame("Halo", callback: { (res) in
-            self.searchResult = res.map { item -> Game in
-                GameListAdapter(item).getAgeRating().getCompanies().getGameMode().getGenre().getPerspective().getPlatforms().getReleaseDate().getGame()
-            }
-            self.tableView.reloadData()
-        })
+        searchBar.delegate = self
     }
     
     // Table View
@@ -48,5 +39,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 165.5
+    }
+    
+    // SearchBar
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text, searchText.count > 0 {
+            GamesFetch.searchGame(searchText, callback: { (res) in
+                self.searchResult = res.map { item -> Game in
+                    GameListAdapter(item)
+                        .getAgeRating()
+                        .getCompanies()
+                        .getGameMode()
+                        .getGenre()
+                        .getPerspective()
+                        .getPlatforms()
+                        .getReleaseDate()
+                        .getGame()
+                }
+                self.tableView.reloadData()
+            })
+        }
     }
 }

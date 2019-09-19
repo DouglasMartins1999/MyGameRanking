@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz5-46-oIe">
-                                                    <rect key="frame" x="146" y="45" width="38" height="21"/>
+                                                    <rect key="frame" x="146" y="45" width="203" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -256,6 +256,7 @@
                         <viewLayoutGuide key="safeArea" id="YBr-NU-Vgr"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="W2b-wr-lY0" id="csk-aC-78X"/>
                         <outlet property="tableView" destination="gpf-eO-leM" id="fYE-7S-Olr"/>
                     </connections>
                 </viewController>
