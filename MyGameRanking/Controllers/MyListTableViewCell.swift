@@ -31,7 +31,7 @@ class MyListTableViewCell: UITableViewCell {
         self.year.text = String(game.year) ?? "Não Registrado";
         self.platforms.text = setPlatforms(game.platforms);
         self.genres.text = setGenres(game.genres);
-        self.rating.text = String(game.criticRating) ?? "0";
+        self.rating?.text = String(game.criticRating) ?? "0";
     }
     
     private func setPlatforms(_ plat:[String]) -> String {
