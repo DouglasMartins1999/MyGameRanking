@@ -15,12 +15,21 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var chosenMode:String = ""
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var genreButton: UIButton!
+    @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var modeButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chosenMode = genres[0];
         tableView.delegate = self;
         tableView.dataSource = self;
+        
+        genreButton.layer.cornerRadius = genreButton.frame.height / 2;
+        timeButton.layer.cornerRadius = timeButton.frame.height / 2;
+        modeButton.layer.cornerRadius = modeButton.frame.height / 2;
+        orderButton.layer.cornerRadius = orderButton.frame.height / 2;
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -159,6 +168,13 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? SearchViewController {
             dest.listController = self
+        }
+        
+        if let dest = segue.destination as? GameDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let row = indexPath.row;
+                dest.game = games[row];
+            }
         }
     }
 

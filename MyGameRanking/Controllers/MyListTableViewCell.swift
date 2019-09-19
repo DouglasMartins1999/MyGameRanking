@@ -14,11 +14,14 @@ class MyListTableViewCell: UITableViewCell {
     @IBOutlet weak var platforms: UILabel!
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var cover: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        ratingView?.layer.cornerRadius = ratingView?.frame.height ?? 24 / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,6 +35,18 @@ class MyListTableViewCell: UITableViewCell {
         self.platforms.text = setPlatforms(game.platforms);
         self.genres.text = setGenres(game.genres);
         self.rating?.text = String(game.criticRating) ?? "0";
+        
+        setCover(game.cover)
+    }
+    
+    func setCover(_ u: String) {
+        guard let url = URL(string: u) else { return }
+        GamesFetch.fetchImages(url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                self.cover.image = UIImage(data: data)
+            }
+        }
     }
     
     private func setPlatforms(_ plat:[String]) -> String {

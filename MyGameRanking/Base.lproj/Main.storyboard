@@ -30,18 +30,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="165.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="co1nt4" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-QX-1kJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-QX-1kJ">
                                                     <rect key="frame" x="20" y="11" width="111" height="144"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.87177521970000005" green="0.87177521970000005" blue="0.87177521970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GTA V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-oa-PoX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome Jogo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY8-oa-PoX">
                                                     <rect key="frame" x="146" y="11" width="188" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-4A-jvY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-4A-jvY">
                                                     <rect key="frame" x="146" y="45" width="188" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -86,10 +87,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cover" destination="G5d-QX-1kJ" id="hAQ-As-wVH"/>
                                             <outlet property="genres" destination="lfx-fQ-1Oj" id="5jD-h9-u1Z"/>
                                             <outlet property="name" destination="MY8-oa-PoX" id="X1I-sk-BfV"/>
                                             <outlet property="platforms" destination="iav-je-iXW" id="wci-M2-Mg2"/>
                                             <outlet property="rating" destination="c7x-5R-LTX" id="Yhz-1x-lBb"/>
+                                            <outlet property="ratingView" destination="fE9-g9-0YZ" id="Hw4-BX-74z"/>
                                             <outlet property="year" destination="Zre-4A-jvY" id="eEh-f6-5ok"/>
                                             <segue destination="63X-4i-rfA" kind="show" id="BCG-yU-Tdx"/>
                                         </connections>
@@ -156,7 +159,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="genreButton" destination="Y9x-uO-fvI" id="0yL-Mq-am2"/>
+                        <outlet property="modeButton" destination="SHV-Pa-K2j" id="Clo-w3-mFR"/>
+                        <outlet property="orderButton" destination="Dcc-kK-IQg" id="mna-Pw-vR5"/>
                         <outlet property="tableView" destination="NVu-5k-K9P" id="Qbe-Wn-CyQ"/>
+                        <outlet property="timeButton" destination="qYe-Uc-2UB" id="taV-6g-65X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,18 +202,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="165.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="co1nt4" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-bv-EEo">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-bv-EEo">
                                                     <rect key="frame" x="20" y="11" width="111" height="144"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GTA V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50Z-J7-mhf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome Jogo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50Z-J7-mhf">
                                                     <rect key="frame" x="146" y="11" width="203" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz5-46-oIe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz5-46-oIe">
                                                     <rect key="frame" x="146" y="45" width="203" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -227,7 +235,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Xbox 360, PlayStation 3, Xbox One, PC, PlayStation 4" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-Af-Z0N">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plataformas" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-Af-Z0N">
                                                     <rect key="frame" x="146" y="67" width="203" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
@@ -247,6 +255,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addButton" destination="bCa-Y3-GQS" id="8Ar-hX-Tn6"/>
+                                            <outlet property="cover" destination="Xbh-bv-EEo" id="kHW-gM-Scf"/>
                                             <outlet property="genres" destination="b3U-6y-KEc" id="GdV-qG-uqh"/>
                                             <outlet property="name" destination="50Z-J7-mhf" id="goi-fF-PBo"/>
                                             <outlet property="platforms" destination="FDZ-Af-Z0N" id="JaV-jb-u9Y"/>
@@ -268,10 +277,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="904.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Detail View Controller-->
         <scene sceneID="KL9-zw-hcS">
             <objects>
-                <viewController id="63X-4i-rfA" sceneMemberID="viewController">
+                <viewController id="63X-4i-rfA" customClass="GameDetailViewController" customModule="MyGameRanking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YVW-ua-Ht4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -357,8 +366,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Xbox 360, PlayStation 3, Xbox One, PC (Microsoft Windows), PlayStation 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiU-EI-DBN">
-                                <rect key="frame" x="48" y="439" width="318" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Xbox 360, PlayStation 3, Xbox One, PC (Microsoft Windows), PlayStation 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiU-EI-DBN">
+                                <rect key="frame" x="48" y="439" width="316" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -432,16 +442,25 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="g7G-bm-22C" firstAttribute="trailing" secondItem="MiU-EI-DBN" secondAttribute="trailing" constant="48" id="JBX-VP-fgb"/>
-                            <constraint firstItem="MiU-EI-DBN" firstAttribute="leading" secondItem="g7G-bm-22C" secondAttribute="leading" constant="48" id="ghG-aA-KgY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g7G-bm-22C"/>
                     </view>
+                    <connections>
+                        <outlet property="cRating" destination="Lss-lP-JRa" id="k3d-WP-bGX"/>
+                        <outlet property="developer" destination="Bnf-An-gUX" id="6fY-0P-Tsr"/>
+                        <outlet property="duration" destination="Rcz-A4-3P8" id="BpX-5E-cz0"/>
+                        <outlet property="gameName" destination="aia-gD-kPj" id="uzO-vb-R5u"/>
+                        <outlet property="genre" destination="aGO-4n-e4T" id="Muf-g0-mjd"/>
+                        <outlet property="mode" destination="FzI-ip-rTZ" id="5Mc-45-5hm"/>
+                        <outlet property="perspective" destination="H1H-Kv-iRV" id="72E-cC-nDi"/>
+                        <outlet property="platform" destination="MiU-EI-DBN" id="Bf1-5L-eha"/>
+                        <outlet property="screenshot" destination="7Qu-Zv-3Qr" id="LDv-0t-UrD"/>
+                        <outlet property="uRating" destination="J6U-Dn-Xzb" id="ZHv-eI-6Vg"/>
+                        <outlet property="year" destination="jWv-Om-PMZ" id="Ytq-Ze-GHY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUL-7z-2vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="127"/>
+            <point key="canvasLocation" x="2021.7391304347827" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dhX-GJ-6zQ">
@@ -465,7 +484,6 @@
     <resources>
         <image name="425px-PEGI_18.svg" width="141.66667175292969" height="173"/>
         <image name="ar4cy" width="213.33332824707031" height="120"/>
-        <image name="co1nt4" width="88" height="117.33333587646484"/>
         <image name="down-arrow(2)" width="16" height="16"/>
     </resources>
 </document>

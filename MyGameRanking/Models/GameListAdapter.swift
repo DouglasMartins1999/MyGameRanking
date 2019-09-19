@@ -17,6 +17,9 @@ class GameListAdapter {
     var platforms:[String];
     var perspectives:[String];
     var year:Int;
+    var cover:String;
+    var time:Int;
+    var screenshot:String;
     
     init(_ apiResponse:IGDBList){
         self.APIresponse = apiResponse
@@ -28,6 +31,9 @@ class GameListAdapter {
         self.platforms = [];
         self.perspectives = [];
         self.year = 0;
+        self.cover = "";
+        self.screenshot = "";
+        self.time = -1;
     }
     
     func getAgeRating() -> GameListAdapter {
@@ -68,8 +74,24 @@ class GameListAdapter {
         return self
     }
     
+    func getCover() -> GameListAdapter {
+        cover = APIresponse.cover?.url?.replacingOccurrences(of: "thumb", with: "cover_big") ?? ""
+        cover = cover.replacingOccurrences(of: "//", with: "https://")
+        return self;
+    }
+    
+    func getScreenshot() -> GameListAdapter {
+        screenshot = APIresponse.artworks?[0].url?.replacingOccurrences(of: "thumb", with: "screenshot_big") ?? ""
+        screenshot = screenshot.replacingOccurrences(of: "//", with: "https://")
+        return self;
+    }
+    
+    func getTime() -> GameListAdapter {
+        return self
+    }
+    
     func getGame() -> Game {
-        return Game(APIresponse.name ?? "", year, APIresponse.rating, APIresponse.aggregated_rating ?? 0, platforms, nil, gameMode, genres, perspectives, ageRating, developer, "", "")
+        return Game(APIresponse.name ?? "", year, APIresponse.rating, APIresponse.aggregated_rating ?? 0, platforms, nil, gameMode, genres, perspectives, ageRating, developer, cover, screenshot)
     }
 }
 

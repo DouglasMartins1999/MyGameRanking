@@ -21,4 +21,8 @@ class GamesFetch {
             }.resume()
         }
     }
+    
+    static func fetchImages(_ url: URL, callback: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: callback).resume()
+    }
 }

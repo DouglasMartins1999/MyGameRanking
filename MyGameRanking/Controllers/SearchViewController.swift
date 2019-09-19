@@ -56,6 +56,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         .getPerspective()
                         .getPlatforms()
                         .getReleaseDate()
+                        .getCover()
+                        .getScreenshot()
+                        .getTime()
                         .getGame()
                 }
                 DispatchQueue.main.async {
