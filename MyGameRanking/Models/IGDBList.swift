@@ -11,7 +11,10 @@ import Foundation
 class IGDBList:Codable {
     var age_ratings:[AgeRating]?
     var aggregated_rating:Double?
+
 //    var cover:CoverImage?
+
+    var cover:CoverImage?
     var game_modes:[GameModes]?
     var genres: [Genres]?
     var involved_companies:[InvolvedCompanies]?
@@ -20,6 +23,10 @@ class IGDBList:Codable {
     var player_perspectives:[Int]?
     var rating:Double?
     var release_dates:[ReleaseDates]?
+
+    var artworks:[Artworks]?
+    var screenshots:[Artworks]?
+
 //    var time_to_beat:TimeToBeat?
 }
 
@@ -27,11 +34,16 @@ class AgeRating:Codable {
     var rating:Int?
 }
 
+
 //class CoverImage: Codable{
 //    var height:Int?
 //    var url:String?
 //    var width:Int?
 //}
+
+class CoverImage: Codable{
+    var url:String?
+}
 
 class GameModes: Codable{
     var name:String?
@@ -61,3 +73,9 @@ class ReleaseDates:Codable {
 class TimeToBeat:Codable {
     var normally:Int?
 }
+
+
+class Artworks:Codable {
+    var url:String?
+}
+

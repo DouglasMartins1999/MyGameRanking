@@ -17,6 +17,10 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var genreButton: UIButton!
+    @IBOutlet weak var timeButton: UIButton!
+    @IBOutlet weak var modeButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +28,18 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         tableView.delegate = self;
         tableView.dataSource = self;
         
-        var g = Game("Halo: Combat Evolved", 2001, 85, 86, ["PC", "Mac", "Xbox"], 39600, ["Single Player", "Multiplayer", "Co-operative"], ["Shooter"], ["First person", "Third person"], 4, "Bungie", "", "")
-        
-        var g2 = Game("Dance Central 3", 2012, 85, 87, ["Xbox 360"], 0, ["Single Player", "Multiplayer"], ["Music"], ["Third Person"], 3, "Harmonix", "", "")
-        games.append(g)
-        games.append(g2)
-        
-        currentViewGames = games
-        orderGames(gameOrder: gameOrder)
+        genreButton.layer.cornerRadius = genreButton.frame.height / 2;
+        timeButton.layer.cornerRadius = timeButton.frame.height / 2;
+        modeButton.layer.cornerRadius = modeButton.frame.height / 2;
+        orderButton.layer.cornerRadius = orderButton.frame.height / 2;
     }
     
     override func viewDidAppear(_ animated: Bool) {
         var newGenres = currentViewGames.map{ $0.genres }.flatMap{$0}
         genres = removeDuplicates(genres: newGenres)
+        currentViewGames = games
+        tableView.reloadData()
+        orderGames(gameOrder: gameOrder)
         
     }
     
@@ -55,7 +58,9 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return newArr
     }
     
-    //Create PickerView
+   
+    
+    // Create PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -108,7 +113,7 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func filterGameMode(gameMode: Int) -> Bool{
         if gameMode==0 {
             self.currentViewGames = self.games
-            self.currentViewGames = self.currentViewGames.filter({$0.mode.contains("Single Player")})
+            self.currentViewGames = self.currentViewGames.filter({$0.mode.contains("Single player")})
             orderGames(gameOrder: gameOrder)
             self.tableView.reloadData()
             return true
@@ -333,5 +338,18 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.present(editRadiusAlert, animated: true)
     }
     
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? SearchViewController {
+            dest.listController = self
+        }
+        
+        if let dest = segue.destination as? GameDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let row = indexPath.row;
+                dest.game = currentViewGames[row];
+            }
+        }
+    }
+
 }

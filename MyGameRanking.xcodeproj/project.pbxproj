@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5567F0312333BE22000B59B1 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567F0302333BE22000B59B1 /* GameDetailViewController.swift */; };
 		55781E8E233118650092820B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55781E8D233118650092820B /* MyListViewController.swift */; };
 		55FB088B232FD321006B553C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB088A232FD321006B553C /* AppDelegate.swift */; };
 		55FB0890232FD321006B553C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FB088E232FD321006B553C /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5567F0302333BE22000B59B1 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		55781E8D233118650092820B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		55FB0887232FD321006B553C /* MyGameRanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGameRanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FB088A232FD321006B553C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				55781E8D233118650092820B /* MyListViewController.swift */,
 				55FB089F23312431006B553C /* MyListTableViewCell.swift */,
 				55FB08A123324B2F006B553C /* SearchViewController.swift */,
+				5567F0302333BE22000B59B1 /* GameDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				55FB089E233113DD006B553C /* Game.swift in Sources */,
 				55FB08A7233258CB006B553C /* IGDBList.swift in Sources */,
 				55FB08A523324F9E006B553C /* GamesFetch.swift in Sources */,
+				5567F0312333BE22000B59B1 /* GameDetailViewController.swift in Sources */,
 				55FB08A023312431006B553C /* MyListTableViewCell.swift in Sources */,
 				55781E8E233118650092820B /* MyListViewController.swift in Sources */,
 				55FB088B232FD321006B553C /* AppDelegate.swift in Sources */,

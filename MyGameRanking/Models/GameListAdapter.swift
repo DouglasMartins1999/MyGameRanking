@@ -17,6 +17,10 @@ class GameListAdapter {
     var platforms:[String];
     var perspectives:[String];
     var year:Int;
+    var cover:String;
+    var time:Int;
+    var screenshot:String;
+    var artwork:String;
     
     init(_ apiResponse:IGDBList){
         self.APIresponse = apiResponse
@@ -28,6 +32,10 @@ class GameListAdapter {
         self.platforms = [];
         self.perspectives = [];
         self.year = 0;
+        self.cover = "";
+        self.screenshot = "";
+        self.time = -1;
+        self.artwork = "";
     }
     
     func getAgeRating() -> GameListAdapter {
@@ -49,7 +57,10 @@ class GameListAdapter {
     }
     
     func getCompanies() -> GameListAdapter {
-        developer = APIresponse.involved_companies?.filter({ $0.developer == true })[0].company?.name ?? "Não Especificado"
+        let developers = APIresponse.involved_companies?.filter({ $0.developer == true }) ?? []
+        if developers.count > 0 {
+            self.developer = developers[0].company?.name ?? "Não Especificado"
+        }
         return self
     }
     
@@ -64,12 +75,34 @@ class GameListAdapter {
     }
     
     func getReleaseDate() -> GameListAdapter {
-        year = APIresponse.release_dates?.map({ $0.y })[0] ?? 2019
+        year = APIresponse.release_dates?.map({ $0.y })[0] ?? 0
+        return self
+    }
+        
+    func getCover() -> GameListAdapter {
+        cover = APIresponse.cover?.url?.replacingOccurrences(of: "thumb", with: "cover_big") ?? ""
+        cover = cover.replacingOccurrences(of: "//", with: "https://")
+        return self;
+    }
+    
+    func getScreenshot() -> GameListAdapter {
+        screenshot = APIresponse.screenshots?[0].url?.replacingOccurrences(of: "thumb", with: "screenshot_big") ?? ""
+        screenshot = screenshot.replacingOccurrences(of: "//", with: "https://")
+        return self;
+    }
+    
+    func getArtwork() -> GameListAdapter {
+        artwork = APIresponse.artworks?[0].url?.replacingOccurrences(of: "thumb", with: "screenshot_big") ?? ""
+        artwork = artwork.replacingOccurrences(of: "//", with: "https://")
+        return self;
+    }
+    
+    func getTime() -> GameListAdapter {
         return self
     }
     
     func getGame() -> Game {
-        return Game(APIresponse.name ?? "", year, APIresponse.rating, APIresponse.aggregated_rating ?? 0, platforms, nil, gameMode, genres, perspectives, ageRating, developer, "", "")
+        return Game(APIresponse.name ?? "", year, APIresponse.rating, APIresponse.aggregated_rating ?? 0, platforms, nil, gameMode, genres, perspectives, ageRating, developer, cover, screenshot, artwork)
+
     }
 }
-

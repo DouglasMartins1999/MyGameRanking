@@ -14,8 +14,9 @@ class Game {
     var developer:String;
     var cover:String;
     var banner:String;
+    var screenshot:String;
     
-    init(_ name: String, _ year: Int, _ uRating: Double?, _ cRating: Double, _ platform: [String]?, _ beatingTime: Int?, _ mode: [String]?, _ genres: [String], _ perspective: [String], _ aRating: Int, _ developer: String?, _ cover: String, _ banner: String){
+    init(_ name: String, _ year: Int, _ uRating: Double?, _ cRating: Double, _ platform: [String]?, _ beatingTime: Int?, _ mode: [String]?, _ genres: [String], _ perspective: [String], _ aRating: Int, _ developer: String?, _ cover: String, _ screenshot: String, _ banner: String){
         self.name = name;
         self.year = year;
         self.userRating = Int(uRating ?? 0);
@@ -24,11 +25,12 @@ class Game {
         self.beatingTime = beatingTime ?? 0;
         self.mode = mode ?? ["Single Player"];
         self.genres = genres;
-        self.perspective = [];
+        self.perspective = perspective;
         self.ageRating = aRating;
         self.developer = developer ?? "Não Registrado";
         self.cover = cover;
         self.banner = banner;
+        self.screenshot = screenshot;
         
         for p in perspective {
             self.addPerspective(p);
