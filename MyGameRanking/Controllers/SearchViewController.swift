@@ -71,7 +71,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addGameToMyList(_ sender: UIButton) {
-        listController?.games.append(searchResult[sender.tag])
+        CoreDataManager.sharedInstance.insertGame(game: searchResult[sender.tag])
+//        listController?.games.append(searchResult[sender.tag])
         navigationController?.popViewController(animated: true)
     }
 }

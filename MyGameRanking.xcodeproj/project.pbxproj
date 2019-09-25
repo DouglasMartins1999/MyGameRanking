@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5567F0312333BE22000B59B1 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5567F0302333BE22000B59B1 /* GameDetailViewController.swift */; };
 		55781E8E233118650092820B /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55781E8D233118650092820B /* MyListViewController.swift */; };
+		55CCA1272339119D00F874D9 /* MyGameRanking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55CCA1252339119D00F874D9 /* MyGameRanking.xcdatamodeld */; };
+		55CCA129233911A900F874D9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCA128233911A900F874D9 /* CoreDataManager.swift */; };
+		55CCA13A233A37EC00F874D9 /* GameDatabase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCA138233A37EC00F874D9 /* GameDatabase+CoreDataClass.swift */; };
+		55CCA13B233A37EC00F874D9 /* GameDatabase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCA139233A37EC00F874D9 /* GameDatabase+CoreDataProperties.swift */; };
 		55FB088B232FD321006B553C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB088A232FD321006B553C /* AppDelegate.swift */; };
 		55FB0890232FD321006B553C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FB088E232FD321006B553C /* Main.storyboard */; };
 		55FB0892232FD323006B553C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FB0891232FD323006B553C /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 /* Begin PBXFileReference section */
 		5567F0302333BE22000B59B1 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		55781E8D233118650092820B /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
+		55CCA1262339119D00F874D9 /* MyGameRanking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyGameRanking.xcdatamodel; sourceTree = "<group>"; };
+		55CCA128233911A900F874D9 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		55CCA138233A37EC00F874D9 /* GameDatabase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDatabase+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55CCA139233A37EC00F874D9 /* GameDatabase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameDatabase+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		55FB0887232FD321006B553C /* MyGameRanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGameRanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FB088A232FD321006B553C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55FB088F232FD321006B553C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +95,10 @@
 				55FB0891232FD323006B553C /* Assets.xcassets */,
 				55FB0893232FD323006B553C /* LaunchScreen.storyboard */,
 				55FB0896232FD323006B553C /* Info.plist */,
+				55CCA128233911A900F874D9 /* CoreDataManager.swift */,
+				55CCA1252339119D00F874D9 /* MyGameRanking.xcdatamodeld */,
+				55CCA138233A37EC00F874D9 /* GameDatabase+CoreDataClass.swift */,
+				55CCA139233A37EC00F874D9 /* GameDatabase+CoreDataProperties.swift */,
 			);
 			path = MyGameRanking;
 			sourceTree = "<group>";
@@ -180,15 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CCA13B233A37EC00F874D9 /* GameDatabase+CoreDataProperties.swift in Sources */,
 				55FB08A223324B2F006B553C /* SearchViewController.swift in Sources */,
 				55FB089E233113DD006B553C /* Game.swift in Sources */,
 				55FB08A7233258CB006B553C /* IGDBList.swift in Sources */,
 				55FB08A523324F9E006B553C /* GamesFetch.swift in Sources */,
 				5567F0312333BE22000B59B1 /* GameDetailViewController.swift in Sources */,
 				55FB08A023312431006B553C /* MyListTableViewCell.swift in Sources */,
+				55CCA1272339119D00F874D9 /* MyGameRanking.xcdatamodeld in Sources */,
 				55781E8E233118650092820B /* MyListViewController.swift in Sources */,
 				55FB088B232FD321006B553C /* AppDelegate.swift in Sources */,
 				55FB08A9233275D4006B553C /* GameListAdapter.swift in Sources */,
+				55CCA13A233A37EC00F874D9 /* GameDatabase+CoreDataClass.swift in Sources */,
+				55CCA129233911A900F874D9 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +402,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55CCA1252339119D00F874D9 /* MyGameRanking.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55CCA1262339119D00F874D9 /* MyGameRanking.xcdatamodel */,
+			);
+			currentVersion = 55CCA1262339119D00F874D9 /* MyGameRanking.xcdatamodel */;
+			path = MyGameRanking.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 55FB087F232FD321006B553C /* Project object */;
 }

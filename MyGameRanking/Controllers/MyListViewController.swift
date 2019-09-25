@@ -10,6 +10,7 @@ import UIKit
 
 class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource {
     var games:[Game] = [];
+    var dbGames: [GameDatabase] = []
     var currentViewGames: [Game] = []
     var gameOrder = 1
     var genres:[String] = ["Escolha uma opção: ", "Todos"]
@@ -35,9 +36,11 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        games = CoreDataManager.sharedInstance.getGames()
+        dbGames = CoreDataManager.sharedInstance.getDBGames()
+        currentViewGames = games
         var newGenres = currentViewGames.map{ $0.genres }.flatMap{$0}
         genres = removeDuplicates(genres: newGenres)
-        currentViewGames = games
         tableView.reloadData()
         orderGames(gameOrder: gameOrder)
         
@@ -96,6 +99,28 @@ class MyListViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 165.5
+    }
+    
+    
+    //Delete Row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let row = indexPath.row
+            var gameToRemove = currentViewGames[row]
+            
+            for i in 0..<games.count{
+                if games[i].name == gameToRemove.name{
+                    CoreDataManager.sharedInstance.deleteObject(object: dbGames[i])
+                    games.remove(at: i)
+                    dbGames.remove(at: i)
+                    currentViewGames.remove(at: row)
+                    break;
+                }
+            }
+            
+            print(games.map({ $0.name }))
+            tableView.reloadData()
+        }
     }
     
     
